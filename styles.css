@@ -1,16 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
     color: #333;
+    font-size: 1rem;
 }
 
 header {
     background-color: #003366;
-    padding: 1.5rem 4rem;
+    padding: 1rem;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -30,6 +39,16 @@ nav {
     justify-content: center;
     align-items: center;
     gap: 10px;
+}
+
+.link-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 0 5px;
+    text-decoration: none;
+    color: white;
 }
 
 nav ul {
@@ -59,7 +78,7 @@ nav ul li a:hover {
     padding: 0.5rem 1rem;
     text-decoration: none;
     transition: color 0.3s ease, transform 0.3s ease;
-    position: relative; /* Update 1: Added position: relative */
+    position: relative;
 }
 
 .link:hover {
@@ -76,11 +95,11 @@ nav ul li a:hover {
     transform: translateX(-50%);
     height: 3px;
     background-color: #ffd700;
-    border-radius: 3px; /* Update 2: Corrected hover pseudo-element */
+    border-radius: 3px;
 }
 
 main {
-    padding: 2rem;
+    padding: 1rem;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -171,7 +190,6 @@ button {
     background: rgba(128, 128, 128, 0.1);
     transform: translateY(-5px);
     cursor: pointer;
-    /* box-shadow: 6px 6px 10px 3px rgba(0,0,0,0.1); */
 }
 
 .program-card img {
@@ -201,10 +219,6 @@ form {
     box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
-/* .input {
-    border: 1px solid palevioletred;
-} */
-
 input, textarea {
     width: 100%;
     padding: 0.5rem;
@@ -213,22 +227,15 @@ input, textarea {
     box-sizing: border-box;
 }
 
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-    }
-    
-    nav ul {
-        margin-top: 1rem;
-    }
-    
-    nav ul li {
-        margin: 0 10px;
-    }
+textarea {
+    height: 100px;
+    resize: none;
 }
 
 iframe {
     border-radius: 16px;
+    width: 100%;
+    height: 300px;
 }
 
 .iframe {
@@ -236,3 +243,104 @@ iframe {
     border-radius: 16px;
     box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
+
+.mobile-menu-button {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+}
+
+.mobile-menu-button span {
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-button {
+        display: flex;
+    }
+
+    nav {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 1rem;
+    }
+
+    .nav-menu {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #003366;
+        padding: 1rem 0;
+        text-align: center;
+    }
+
+    .nav-menu.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 1rem;
+    }
+    
+    nav ul li {
+        margin: 0.75rem 0;
+        text-align: center;
+    }
+
+    nav ul li a {
+        display: inline-block;
+        width: 100%;
+        padding: 0.5rem 0;
+    }
+
+    section {
+        padding: 0.5rem 0;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .programs-list {
+        grid-template-columns: 1fr;
+    }
+
+    form {
+        padding: 20px 25px;
+    }
+}
+
+@media (min-width: 768px) {
+    iframe {
+        height: 450px;
+    }
+}
+

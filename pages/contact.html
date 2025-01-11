@@ -11,10 +11,17 @@
     <header>
         <nav>
             <div class="logo">
-                <img src="../img/favicon-task.png" alt="" width="25px" height="25p">
-                MIT
+                <a href="contact.html" class="link-logo">
+                    <img src="../img/favicon-task.png" alt="" width="25px" height="25px">
+                    MIT
+                </a>
             </div>
-            <ul>
+            <button class="mobile-menu-button" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
                 <li><a class="link" href="../index.html">ACCUEIL</a></li>
                 <li><a class="link" href="apropos.html">A PROPOS</a></li>
                 <li><a class="link" href="programmes.html">PROGRAMMES</a></li>
@@ -49,13 +56,13 @@
         <section>
             <h2>FORMULAIRE D'INSCRIPTION</h2>
             <form>
-                <label for="name">Nom:</label>
+                <label for="name">Nom :</label>
                 <input type="text" id="name" name="name" required>
 
-                <label for="email">Email:</label>
+                <label for="email">Email :</label>
                 <input type="email" id="email" name="email" required>
 
-                <label for="message">Message:</label>
+                <label for="message">Message :</label>
                 <textarea id="message" name="message" required></textarea>
 
                 <button type="submit" class="button">Envoyer</button>
@@ -65,5 +72,7 @@
     <footer>
         <p>&copy; 2023 Massachusetts Institute of Technology. Tous droits réservés.</p>
     </footer>
+
+    <script src="/script.js"></script>
 </body>
 </html>
