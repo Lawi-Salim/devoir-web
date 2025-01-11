@@ -10,7 +10,7 @@ body {
 
 header {
     background-color: #003366;
-    padding: 1rem;
+    padding: 1.5rem 4rem;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -40,7 +40,7 @@ nav ul {
 }
 
 nav ul li {
-    margin-left: 20px;
+    margin-left: 30px;
 }
 
 nav ul li a {
@@ -54,14 +54,57 @@ nav ul li a:hover {
     color: #ffd700;
 }
 
+.link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    position: relative; /* Update 1: Added position: relative */
+}
+
+.link:hover {
+    color: #ffd700;
+    transform: translateY(-2px);  
+}
+
+.link:hover::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: calc(100% - 2rem);
+    transform: translateX(-50%);
+    height: 3px;
+    background-color: #ffd700;
+    border-radius: 3px; /* Update 2: Corrected hover pseudo-element */
+}
+
 main {
     padding: 2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
+section {
+    padding: 1rem 0;
+}
+
 h1, h2 {
     color: #003366;
+}
+
+section h2 {
+    position: relative;
+}
+
+h2::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100px;
+    height: 4px;
+    background: #003366;
 }
 
 .hero {
@@ -80,15 +123,22 @@ h1, h2 {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
+button {
+    border: none;
+    font-size: 15px;
+}
+
 .button {
     display: inline-block;
     padding: 10px 20px;
     background-color: #ffd700;
     color: #003366;
     text-decoration: none;
-    border-radius: 5px;
     font-weight: bold;
     transition: background-color 0.3s ease;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    cursor: pointer;
+    border-radius: 50px;
 }
 
 .button:hover {
@@ -107,13 +157,21 @@ h1, h2 {
     padding: 1rem;
     text-align: center;
     transition: transform 0.3s ease;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
+.program-card p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    line-height: 1.4;
+}
 
 .program-card:hover {
+    background: rgba(128, 128, 128, 0.1);
     transform: translateY(-5px);
     cursor: pointer;
-    box-shadow: 6px 6px 10px 3px rgba(0,0,0,0.1);
+    /* box-shadow: 6px 6px 10px 3px rgba(0,0,0,0.1); */
 }
 
 .program-card img {
@@ -137,13 +195,22 @@ form {
     gap: 1rem;
     max-width: 500px;
     margin: 0 auto;
+    padding: 40px 50px;
+    background: rgba(128, 128, 128, 0.1);
+    border-radius: 16px;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
+
+/* .input {
+    border: 1px solid palevioletred;
+} */
 
 input, textarea {
     width: 100%;
     padding: 0.5rem;
     border: 1px solid #ddd;
     border-radius: 5px;
+    box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
