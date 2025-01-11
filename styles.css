@@ -109,8 +109,11 @@ h1, h2 {
     transition: transform 0.3s ease;
 }
 
+
 .program-card:hover {
     transform: translateY(-5px);
+    cursor: pointer;
+    box-shadow: 6px 6px 10px 3px rgba(0,0,0,0.1);
 }
 
 .program-card img {
