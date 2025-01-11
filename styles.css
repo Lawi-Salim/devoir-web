@@ -93,9 +93,9 @@ nav ul li a:hover {
     bottom: -5px;
     width: calc(100% - 2rem);
     transform: translateX(-50%);
-    height: 3px;
+    height: 5px;
     background-color: #ffd700;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 
 main {
@@ -122,7 +122,8 @@ h2::after {
     bottom: -5px;
     left: 0;
     width: 100px;
-    height: 4px;
+    height: 5px;
+    border-radius: 5px;
     background: #003366;
 }
 
@@ -225,6 +226,7 @@ input, textarea {
     border: 1px solid #ddd;
     border-radius: 5px;
     box-sizing: border-box;
+    outline: none;
 }
 
 textarea {
